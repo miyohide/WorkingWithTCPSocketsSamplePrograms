@@ -28,6 +28,8 @@ module FTP
             child_pids << spawn_child
          end
 
+         $0 = "master"
+
          trap(:INT) {
             child_pids.each do |cpid|
                begin
